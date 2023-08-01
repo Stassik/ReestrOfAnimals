@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class BaseAnimal {
-    public String name; // Имя животного
-    public String mainClass; // Класс животного
-    public String nameClass; // Подкласс животного
-    public Date birthday; // Дата рождения
+    protected String name; // Имя животного
+    protected String mainClass; // Класс животного
+    protected String nameClass; // Подкласс животного
+    protected Date birthday; // Дата рождения
 
-    public ArrayList skills; // Умения
+    protected ArrayList skills; // Умения
 
     private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -26,6 +26,14 @@ public abstract class BaseAnimal {
     public String getInfo() {
         String str = mainClass + " " + nameClass + " " + name + " " + new SimpleDateFormat("yyyy-MM-dd").format(birthday) + " " + String.join(" / ",skills);
         return str;
+    }
+
+    public ArrayList getSkills() {
+        return this.skills;
+    }
+
+    public void setSkills(ArrayList skills) {
+        this.skills = skills;
     }
 
 }

@@ -33,14 +33,14 @@ public class Main {
 
         System.out.println("Реестр животных");
         int num = 1;
-        int num1 = 1;
-        int num2 = 1;
+        int num1;
+        int num2;
         int num3 = 1;
 
         ArrayList skills = new ArrayList<String>();
 
         while (num != 0) {
-            System.out.println("Что Вы хотите сделать?\n1 - просмотреть список животных;\n2 - добавить животное;\n3 - добавить команду\n0 - выйти.\"");
+            System.out.println("Что Вы хотите сделать?\n1 - просмотреть список животных;\n2 - добавить животное;\n3 - добавить команду\n0 - выйти.");
             System.out.print("Ваш ответ: ");
             num = iscanner.nextInt();
 
@@ -153,13 +153,14 @@ public class Main {
                     while (num3 != 0) {
                         System.out.println("1 - добавить скилл \n0 - сохранить");
                         num3 = iscanner.nextInt();
+
                         switch (num3) {
                             case 1:
                                 System.out.println("Скилл: ");
-                                ArrayList oldSkills = animalList.get(pos-1).skills;
+                                ArrayList oldSkills = animalList.get(pos-1).getSkills();
                                 String newSkill = iscanner.next();
                                 oldSkills.add(newSkill);
-                                animalList.get(pos-1).skills = oldSkills;
+                                animalList.get(pos-1).setSkills(oldSkills);
                                 break;
                         }
 
@@ -171,7 +172,4 @@ public class Main {
 
     }
 
-    public void setInfo () {
-
-    }
 }
