@@ -36,6 +36,7 @@ public class Main {
         int num1;
         int num2;
         int num3 = 1;
+        int num4 = 1;
 
         ArrayList skills = new ArrayList<String>();
 
@@ -150,11 +151,11 @@ public class Main {
                     int pos = iscanner.nextInt();
                     System.out.println(animalList.get(pos-1).getInfo());
 
-                    while (num3 != 0) {
+                    while (num4 != 0) {
                         System.out.println("1 - добавить скилл \n0 - сохранить");
-                        num3 = iscanner.nextInt();
+                        num4 = iscanner.nextInt();
 
-                        switch (num3) {
+                        switch (num4) {
                             case 1:
                                 System.out.println("Скилл: ");
                                 ArrayList oldSkills = animalList.get(pos-1).getSkills();
